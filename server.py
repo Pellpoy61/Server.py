@@ -5,6 +5,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/receive_duckyscript', methods=['POST'])
+@cross_origin()
 def receive_duckyscript():
     duckyscript = request.form.get('duckyscript')
     # Process the received Duckyscript (e.g., save to a file and execute)
